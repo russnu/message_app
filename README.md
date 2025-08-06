@@ -14,7 +14,7 @@
 <h2>🧰 Tech Stack</h2>
 
 <ul>
-  <li>☕ Java 17+</li>
+  <li>☕ Java 21+</li>
   <li>🛠️ Maven</li>
   <li>🖼️ JavaFX (Frontend UI)</li>
   <li>🔥 Spring Boot (RESTful Backend)</li>

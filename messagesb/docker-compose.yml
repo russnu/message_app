@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  mysql_message:
+    image: mysql:8.0
+    container_name: mysql_message
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: message_db
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_message_data:/var/lib/mysql
+    networks:
+      - messagenetwork
+
+  message-backend:
+    image: messagesb
+    container_name: messagesrvr
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql_message:3306/message_db?allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: mysqluser
+      SPRING_DATASOURCE_PASSWORD: password
+    depends_on:
+      - mysql_message
+    networks:
+      - messagenetwork
+
+volumes:
+  mysql_message_data:
+
+networks:
+  messagenetwork:
+    driver: bridge

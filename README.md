@@ -1,6 +1,8 @@
-# 📩 **Simple Message Application**
+<h1 align="center">📩 Simple Message Application</h1>
 
-A simple Java application using `Maven`, `JavaFX` (frontend), and `Spring Boot` (backend).
+<p align="center">
+  A simple Java application using <code>Maven</code>, <code>JavaFX</code> (frontend), and <code>Spring Boot</code> (backend).
+</p>
 
 <p align="center">
   <em>This project was developed as a partial requirement for</em><br>
